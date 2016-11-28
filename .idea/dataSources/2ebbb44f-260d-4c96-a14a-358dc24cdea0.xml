@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - sshtest@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="sshtest">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="sakila"/>
+    <schema id="6" name="test"/>
+    <schema id="7" name="wireless"/>
+    <schema id="8" name="world"/>
+    <table id="9" parent="1" name="t_music"/>
+    <table id="10" parent="1" name="t_picture"/>
+    <table id="11" parent="1" name="t_users"/>
+    <column id="12" parent="9" name="v_msid">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="13" parent="9" name="v_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="14" parent="9" name="v_userId">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="15" parent="9" name="v_msoldName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="16" parent="9" name="v_msnewName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="17" parent="9" name="v_mspath">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="18" parent="9" name="dt_cjsj">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="19" parent="9" name="v_totalCapacity">
+      <comment>媒体总容量</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="20" parent="9" name="v_useCapacity">
+      <comment>已使用容量</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="21" parent="9" name="v_kcrl">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="22" parent="9" name="PRIMARY">
+      <columns>v_msid</columns>
+      <primary>1</primary>
+    </key>
+    <column id="23" parent="10" name="v_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="24" parent="10" name="v_userId">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="25" parent="10" name="v_ptId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="26" parent="10" name="v_ptName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="27" parent="10" name="dt_cjsj">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="28" parent="10" name="v_oldName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="29" parent="10" name="v_newName">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="30" parent="10" name="v_path">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="31" parent="10" name="v_totalCapacity">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="32" parent="10" name="v_useCapacity">
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <key id="33" parent="10" name="PRIMARY">
+      <columns>v_id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="34" parent="11" name="v_userId">
+      <comment>用户ID</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="35" parent="11" name="v_nickname">
+      <comment>用户昵称</comment>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="36" parent="11" name="v_userName">
+      <comment>姓名</comment>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="37" parent="11" name="v_userLogin">
+      <comment>登陆账号</comment>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="38" parent="11" name="v_password">
+      <comment>登陆口令</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="39" parent="11" name="v_identityId">
+      <comment>身份ID号</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="40" parent="11" name="v_documentType">
+      <comment>证件类型</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="41" parent="11" name="v_city">
+      <comment>所在城市</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="42" parent="11" name="v_phone">
+      <comment>手机号</comment>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="43" parent="11" name="v_recommend">
+      <comment>用户介绍</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="44" parent="11" name="v_sign">
+      <comment>单位个人标志</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="45" parent="11" name="v_qq">
+      <comment>QQ号</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="46" parent="11" name="v_weChat">
+      <comment>微信号</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="47" parent="11" name="v_alipay">
+      <comment>支付宝账号</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="48" parent="11" name="v_email">
+      <comment>邮箱号</comment>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="49" parent="11" name="v_effective">
+      <comment>有效期</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="50" parent="11" name="v_integral">
+      <comment>积分</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="51" parent="11" name="v_popularity">
+      <comment>人气值</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="52" parent="11" name="v_level">
+      <comment>用户等级</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="53" parent="11" name="dt_creationTime">
+      <comment>创建时间</comment>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="54" parent="11" name="v_picture">
+      <comment>头像照片</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="55" parent="11" name="v_grzyqj">
+      <comment>个人主页全景</comment>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="56" parent="11" name="v_state">
+      <comment>登录状态  0 开启  1 禁止</comment>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <key id="57" parent="11" name="PRIMARY">
+      <columns>v_userId</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
