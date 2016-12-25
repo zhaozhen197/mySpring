@@ -1,13 +1,14 @@
 package cn.zane.wechat.util;
 
-import cn.zane.wechat.model.SNSUserInfo;
 import cn.zane.wechat.model.WeixinOauth2Token;
-import net.sf.json.JSONArray;
+import cn.zane.wechat.model.entity.TWeixinuserEntity;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 有关获得网页授权凭证的相关api
@@ -40,6 +41,7 @@ public class AuthoInterface {
                 wat.setRefreshToken(jsonObject.getString("refresh_token"));
                 wat.setOpenId(jsonObject.getString("openid"));
                 wat.setScope(jsonObject.getString("scope"));
+                System.out.println(wat);
             } catch (Exception e) {
                 wat = null;
                 int errorCode = jsonObject.getInt("errcode");
@@ -90,39 +92,40 @@ public class AuthoInterface {
      * @return SNSUserInfo
      */
     @SuppressWarnings( { "deprecation", "unchecked" })
-    public static SNSUserInfo getSNSUserInfo(String accessToken, String openId) {
-        SNSUserInfo snsUserInfo = null;
+    public static TWeixinuserEntity getWeixinUserInfo(String accessToken, String openId) throws ParseException {
+        TWeixinuserEntity weixinUserInfo = null;
         // 拼接请求地址
-        String requestUrl = "https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID";
+
+        String requestUrl = "https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN";
         requestUrl = requestUrl.replace("ACCESS_TOKEN", accessToken).replace("OPENID", openId);
         // 通过网页授权获取用户信息
         JSONObject jsonObject = CommonUtil.httpsRequest(requestUrl, "GET", null);
 
-        if (null != jsonObject) {
-            try {
-                snsUserInfo = new SNSUserInfo();
-                // 用户的标识
-                snsUserInfo.setOpenId(jsonObject.getString("openid"));
-                // 昵称
-                snsUserInfo.setNickname(jsonObject.getString("nickname"));
-                // 性别（1是男性，2是女性，0是未知）
-                snsUserInfo.setSex(jsonObject.getInt("sex"));
-                // 用户所在国家
-                snsUserInfo.setCountry(jsonObject.getString("country"));
-                // 用户所在省份
-                snsUserInfo.setProvince(jsonObject.getString("province"));
-                // 用户所在城市
-                snsUserInfo.setCity(jsonObject.getString("city"));
-                // 用户头像
-                snsUserInfo.setHeadImgUrl(jsonObject.getString("headimgurl"));
-                // 用户特权信息
-                snsUserInfo.setPrivilegeList(JSONArray.toList(jsonObject.getJSONArray("privilege"), List.class));
-            } catch (Exception e) {
-                snsUserInfo = null;
-                int errorCode = jsonObject.getInt("errcode");
-                String errorMsg = jsonObject.getString("errmsg");
-                System.out.println("获取用户信息失败 errcode:{} errmsg:{}"+ errorCode+ errorMsg);
-            }
-        }
-        return snsUserInfo;
+
+        weixinUserInfo = new TWeixinuserEntity();
+        // 用户的标识
+        weixinUserInfo.setOpenId(jsonObject.getString("openid"));
+        // 昵称
+        weixinUserInfo.setNickname(jsonObject.getString("nickname"));
+        // 性别（1是男性，2是女性，0是未知）
+        weixinUserInfo.setSex(jsonObject.getInt("sex"));
+        // 用户所在国家
+        weixinUserInfo.setCountry(jsonObject.getString("country"));
+        // 用户所在省份
+        weixinUserInfo.setProvince(jsonObject.getString("province"));
+        // 用户所在城市
+        weixinUserInfo.setCity(jsonObject.getString("city"));
+        // 用户头像
+        weixinUserInfo.setHeadimgur(jsonObject.getString("headimgurl"));
+        // 用户特权信息
+        weixinUserInfo.setPrivilege(jsonObject.getJSONArray("privilege").toString());
+//                get the now system data
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        Date date = sdf.parse(sdf.format(new Date()));
+        System.out.println("Date"+date);
+                weixinUserInfo.setLoginDate(date.toString());
+//                是否完善个人信息
+        weixinUserInfo.setFinish(0);
+
+        return weixinUserInfo;
     }}

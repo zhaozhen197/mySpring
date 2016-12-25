@@ -23,10 +23,7 @@
       <param-value>true</param-value>
     </init-param>
   </filter>
-  <filter-mapping>
-    <filter-name>encodingFilter</filter-name>
-    <url-pattern>/*</url-pattern>
-  </filter-mapping>
+
 
   <!--配置session-->
   <filter>
@@ -42,6 +39,11 @@
     </init-param>
   </filter>
 
+
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <filter-mapping>
     <filter-name>openSession</filter-name>
     <url-pattern>/*</url-pattern>

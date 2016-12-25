@@ -80,9 +80,10 @@ public class CommonUtil {
 			conn.disconnect();
 			jsonObject = JSONObject.fromObject(buffer.toString());
 		} catch (ConnectException ce) {
-			log.error("连接超时：{}", ce);
+
+			System.out.println(ce);
 		} catch (Exception e) {
-			log.error("https请求异常：{}", e);
+			System.out.println(e);
 		}
 		return jsonObject;
 	}

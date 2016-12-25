@@ -42,7 +42,7 @@ public class CreateMenuTest {
 
 		menu.setButton(new Button[]{btn1,btn2,btn3});
 //		String jsonMenu = JSONObject.fromObject(menu).toString();
-		String jsonMenu = "{\"button\":[{\"type\":\"view\",\"name\":\"VR平台\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0b1ecd19f255e28a&redirect_uri=http://zane197.iok.la/myspring/auth2access&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect\"},{\"type\":\"click\",\"name\":\"活动链接\",\"key\":\"activities\"},{\"name\":\"关于我们\",\"sub_button\":[{\"type\":\"click\",\"name\":\"联系我们\",\"key\":\"contactOur\"},{\"type\":\"click\",\"name\":\"关于\",\"key\":\"about\"}]}]}";
+		String jsonMenu = "{\"button\":[{\"type\":\"view\",\"name\":\"VR平台\",\"url\":\"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0b1ecd19f255e28a&redirect_uri=http%3A%2F%2Fzane197.iok.la%2Fmyspring%2Fauth2access&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect\"},{\"type\":\"click\",\"name\":\"活动链接\",\"key\":\"activities\"},{\"name\":\"关于我们\",\"sub_button\":[{\"type\":\"click\",\"name\":\"联系我们\",\"key\":\"contactOur\"},{\"type\":\"click\",\"name\":\"关于\",\"key\":\"about\"}]}]}";
 		boolean result = false;
 		String accessToken = CommonUtil.getToken("wx0b1ecd19f255e28a", "e27fae4020b4542ee38ed76691d7e410").getAccessToken();
 		System.out.println(accessToken);

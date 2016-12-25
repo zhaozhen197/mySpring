@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - vrwechat@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="vrwechat">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="information_schema"/>
+    <schema id="3" name="mysql"/>
+    <schema id="4" name="performance_schema"/>
+    <schema id="5" name="pre_bookstore"/>
+    <schema id="6" name="qjpt"/>
+    <schema id="7" name="sakila"/>
+    <schema id="8" name="test"/>
+    <schema id="9" name="world"/>
+    <table id="10" parent="1" name="t_canceledmission"/>
+    <table id="11" parent="1" name="t_mission"/>
+    <table id="12" parent="1" name="t_shoot"/>
+    <table id="13" parent="1" name="t_user"/>
+    <table id="14" parent="1" name="t_userimage"/>
+    <table id="15" parent="1" name="t_verified"/>
+    <table id="16" parent="1" name="t_weixinuser"/>
+    <column id="17" parent="10" name="missionId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="18" parent="10" name="userNeedOpenId">
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="19" parent="10" name="userReceiveOpenId">
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="20" parent="10" name="missionSorted">
+      <comment>任务分类1.城市建筑2田园风光3风景名胜4.展览展馆5样板房6中国高校7大事纪实</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="21" parent="10" name="missionPlace">
+      <comment>任务地点</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="22" parent="10" name="publishDate">
+      <comment>发布时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="23" parent="10" name="missionDeadline">
+      <comment>完成期限</comment>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="24" parent="10" name="missionInfo">
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="25" parent="10" name="missionCanelDate">
+      <comment>取消时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <key id="26" parent="10" name="PRIMARY">
+      <columns>missionId
+userNeedOpenId
+userReceiveOpenId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="27" parent="11" name="missionId">
+      <comment>任务id</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="28" parent="11" name="userNeedOpenId">
+      <comment>发布方id</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="29" parent="11" name="userReceiveOpenId">
+      <comment>接受方ID</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="30" parent="11" name="missionSorted">
+      <comment>1.城市建筑2田园风光3风景名胜4.展览展馆5样板房6中国高校7大事纪实</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="31" parent="11" name="missionPlace">
+      <comment>任务地点</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="32" parent="11" name="publishDate">
+      <comment>发布时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="33" parent="11" name="missionDeadline">
+      <comment>完成期限</comment>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="34" parent="11" name="missionInfo">
+      <comment>任务的详细描述</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="35" parent="11" name="missionStatus">
+      <comment>-1 未被接收，0 已被接收未完成，1已被接收已完成</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="36" parent="11" name="workUrl">
+      <comment>完成的作品的地址</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="37" parent="11" name="aggreeStar">
+      <comment>用星星评价</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="38" parent="11" name="overDate">
+      <comment>完成的时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="39" parent="11" name="PRIMARY">
+      <columns>missionId
+userNeedOpenId
+userReceiveOpenId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="40" parent="12" name="openId">
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="41" parent="12" name="teamName">
+      <comment>团队名称</comment>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="42" parent="12" name="shootEqu">
+      <comment>拍摄器材</comment>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="43" parent="12" name="imageExampleUrl">
+      <comment>全景案例</comment>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="44" parent="12" name="videoExampleUrl">
+      <comment>视频案例</comment>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <key id="45" parent="12" name="PRIMARY">
+      <columns>openId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="46" parent="13" name="openId">
+      <comment>微信用户的唯一标识</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="47" parent="13" name="userSorted">
+      <comment>0 未进行任何认证1进行发布认证2两个 认证都通过</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="48" parent="13" name="verifiedId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="49" parent="13" name="shootCert">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="50" parent="13" name="PRIMARY">
+      <columns>openId
+verifiedId
+shootCert</columns>
+      <primary>1</primary>
+    </key>
+    <column id="51" parent="14" name="imageId">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="52" parent="14" name="imageUrl">
+      <comment>地址</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="53" parent="14" name="imageSize">
+      <mandatory>1</mandatory>
+      <data-type>float|0</data-type>
+    </column>
+    <column id="54" parent="14" name="imageDate">
+      <comment>照片提交时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <key id="55" parent="14" name="PRIMARY">
+      <columns>imageId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="56" parent="15" name="verifiedId">
+      <comment>实名认证ID</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="57" parent="15" name="character">
+      <comment>1个人2公司</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="58" parent="15" name="name">
+      <comment>姓名或公司名称</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="59" parent="15" name="idNumber">
+      <comment>身份证号或营业执照</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="60" parent="15" name="checkProvince">
+      <comment>用户填写的省份</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="61" parent="15" name="checkCity">
+      <comment>用户填写的市</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="62" parent="15" name="checkCounty">
+      <comment>用户填写的区</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="63" parent="15" name="checkDetial">
+      <comment>用户填写的详细地址</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="64" parent="15" name="imageID">
+      <comment>人工审核的图片</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="65" parent="15" name="checkInfo">
+      <comment>用户介绍</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="66" parent="15" name="checkStatus">
+      <comment>审核状态</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="67" parent="15" name="PRIMARY">
+      <columns>verifiedId</columns>
+      <primary>1</primary>
+    </key>
+    <column id="68" parent="16" name="openId">
+      <comment>微信用户的唯一标识</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="69" parent="16" name="nickname">
+      <comment>微信昵称</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(100)|0</data-type>
+    </column>
+    <column id="70" parent="16" name="sex">
+      <comment>性别0 女 1 男</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="71" parent="16" name="province">
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="72" parent="16" name="city">
+      <comment>用户所在城市</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="73" parent="16" name="country">
+      <comment>用户所在国家</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="74" parent="16" name="headimgur">
+      <comment>用户头像</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="75" parent="16" name="privilege">
+      <comment>用户的特权信息</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="76" parent="16" name="unionid">
+      <comment>绑定到微信开放平台帐号使用</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="77" parent="16" name="loginDate">
+      <comment>登陆的时间</comment>
+      <mandatory>1</mandatory>
+      <data-type>char(50)|0</data-type>
+    </column>
+    <column id="78" parent="16" name="finish">
+      <comment>是否完善认证信息0 否 1 是</comment>
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="79" parent="16" name="PRIMARY">
+      <columns>openId</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
